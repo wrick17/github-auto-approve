@@ -1,0 +1,14 @@
+.auto-approve {
+  background-color: var(--bgColor-open-emphasis, var(--color-open-emphasis));
+  box-shadow: var(--boxShadow-thin) var(--borderColor-open-emphasis);
+  border: none;
+  border-radius: 4em;
+  display: inline-block;
+  font-size: var(--text-body-size-medium);
+  font-weight: var(--base-text-weight-medium);
+  line-height: var(--control-medium-lineBoxHeight);
+  padding: 5px var(--control-medium-paddingInline-normal);
+  text-align: center;
+  white-space: nowrap;
+  color: var(--fgColor-onEmphasis);
+}
