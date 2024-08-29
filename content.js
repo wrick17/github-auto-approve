@@ -29,6 +29,15 @@ const checkForReviewButton = (cb) => {
 };
 
 const addAutoApproveButton = () => {
+  const user = document.querySelector('meta[name="user-login"]').content;
+  const author = document.querySelector(".author").innerText;
+
+  const isOpen = !!document.querySelector(".State.State--open");
+
+  if (user === author || !isOpen) {
+    return;
+  }
+
   const autoApproveButton = document.createElement("button");
   autoApproveButton.id = "auto-approve";
   autoApproveButton.innerHTML = `${svg} Blindly Auto-Approve`;
