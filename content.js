@@ -29,6 +29,11 @@ const checkForReviewButton = (cb) => {
 };
 
 const addAutoApproveButton = () => {
+  const buttonAlreadyThere = !!document.getElementById('auto-approve');
+  if (buttonAlreadyThere) {
+    return;
+  }
+
   const user = document.querySelector('meta[name="user-login"]').content;
   const author = document.querySelector(".author").innerText;
 
