@@ -1,4 +1,4 @@
-# Github Auto Approve
+# Github Auto Approve v2
 
 Chrome Extension to automatically approve a PR on click of a button. 
 

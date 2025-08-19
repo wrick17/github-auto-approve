@@ -1,0 +1,173 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"src/**/*.*",
+			".storybook/**",
+			"storybook-static/**",
+			"bin/**",
+			"!package.json",
+			"!node_modules/**",
+			"!biome.json",
+			"!tsconfig.json",
+			"!**/*.grit"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"useEditorconfig": false,
+		"formatWithErrors": true,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "lf",
+		"lineWidth": 100,
+		"attributePosition": "auto",
+		"bracketSpacing": true
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"domains": {
+			"project": "none"
+		},
+		"rules": {
+			"recommended": false,
+			"a11y": {
+				"noInteractiveElementToNoninteractiveRole": "error",
+				"noNoninteractiveTabindex": "error",
+				"useKeyWithClickEvents": "off",
+				"useKeyWithMouseEvents": "off",
+				"useValidAnchor": "off"
+			},
+			"complexity": {
+				"noBannedTypes": "warn",
+				"noExtraBooleanCast": "error",
+				"noUselessCatch": "error",
+				"noUselessConstructor": "error",
+				"noUselessLoneBlockStatements": "error",
+				"noUselessRename": "error",
+				"noUselessTernary": "error",
+				"noUselessTypeConstraint": "warn",
+				"noUselessUndefinedInitialization": "error",
+				"noVoid": "error",
+				"useLiteralKeys": "error",
+				"useRegexLiterals": "error",
+				"noAdjacentSpacesInRegex": "error",
+				"noCommaOperator": "off",
+				"noUselessEscapeInRegex": "off"
+			},
+			"correctness": {
+				"noConstAssign": "error",
+				"noConstantCondition": "error",
+				"noEmptyCharacterClassInRegex": "error",
+				"noEmptyPattern": "warn",
+				"noGlobalObjectCalls": "error",
+				"noInvalidConstructorSuper": "error",
+				"noPrecisionLoss": "error",
+				"noSelfAssign": "error",
+				"noSwitchDeclarations": "error",
+				"noUndeclaredVariables": "error",
+				"noUnreachable": "error",
+				"noUnreachableSuper": "error",
+				"noUnsafeFinally": "error",
+				"noUnusedImports": "warn",
+				"noUnusedVariables": "warn",
+				"useIsNan": "error",
+				"useExhaustiveDependencies": "off",
+				"noInvalidBuiltinInstantiation": "error",
+				"useValidTypeof": "error"
+			},
+			"security": {
+				"noGlobalEval": "error"
+			},
+			"style": {
+				"noYodaExpression": "error",
+				"useBlockStatements": "error",
+				"useConsistentBuiltinInstantiation": "warn",
+				"useConst": "error",
+				"useFragmentSyntax": "warn",
+				"useSingleVarDeclarator": "error",
+				"useArrayLiterals": "error"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off",
+				"noAsyncPromiseExecutor": "error",
+				"noCatchAssign": "error",
+				"noClassAssign": "error",
+				"noCompareNegZero": "error",
+				"noControlCharactersInRegex": "error",
+				"noDebugger": "error",
+				"noDoubleEquals": "error",
+				"noDuplicateCase": "error",
+				"noDuplicateClassMembers": "error",
+				"noDuplicateObjectKeys": "error",
+				"noDuplicateParameters": "error",
+				"noExplicitAny": "off",
+				"noFallthroughSwitchClause": "error",
+				"noFunctionAssign": "error",
+				"noGlobalAssign": "error",
+				"noImportAssign": "error",
+				"noMisleadingCharacterClass": "error",
+				"noRedeclare": "error",
+				"noSelfCompare": "error",
+				"noShadowRestrictedNames": "error",
+				"noSparseArray": "error",
+				"noUnsafeNegation": "error",
+				"useDefaultSwitchClauseLast": "error",
+				"noWith": "error",
+				"noVar": "error"
+			},
+			"nursery": {}
+		}
+	},
+	"javascript": {
+		"jsxRuntime": "reactClassic",
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "preserve",
+			"trailingCommas": "all",
+			"semicolons": "always",
+			"arrowParentheses": "asNeeded",
+			"bracketSameLine": false,
+			"quoteStyle": "single",
+			"attributePosition": "auto",
+			"bracketSpacing": true
+		},
+		"globals": [
+			"document",
+			"navigator"
+		]
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
+	},
+	"overrides": [
+		{
+			"includes": [
+				"**/*.ts",
+				"**/*.tsx"
+			],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUndeclaredVariables": "warn"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,4 +1,14 @@
-.auto-approve {
+#auto-container {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.auto-button {
   background-color: var(--bgColor-open-emphasis, var(--color-open-emphasis));
   box-shadow: var(--boxShadow-thin) var(--borderColor-open-emphasis);
   border: none;
@@ -7,8 +17,27 @@
   font-size: var(--text-body-size-medium);
   font-weight: var(--base-text-weight-medium);
   line-height: var(--control-medium-lineBoxHeight);
-  padding: 5px var(--control-medium-paddingInline-normal);
+  padding: 8px var(--control-medium-paddingInline-normal);
   text-align: center;
   white-space: nowrap;
   color: var(--fgColor-onEmphasis);
+  display: none;
+}
+
+.auto-trigger {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border: none;
+  background-color: var(--bgColor-open-emphasis, var(--color-open-emphasis));
+  box-shadow: var(--boxShadow-thin) var(--borderColor-open-emphasis);
+}
+
+#auto-container:hover .auto-button {
+  display: flex;
 }
