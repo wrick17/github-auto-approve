@@ -64,10 +64,14 @@ const newApprove = () => {
 			.querySelector('input[value="approve"]')
 			.parentNode.nextSibling.firstElementChild.click();
 
-		document
-			.querySelector('[class*="prc-Dialog-Footer"]')
-			.querySelector("[data-loading-wrapper] button")
-			.click();
+			try {
+				document.querySelector('[class*="SubmitReviewButton"]').click();
+			} catch (_e) {
+				document
+					.querySelector('[class*="prc-Dialog-Footer"]')
+					.querySelector("[data-loading-wrapper] button")
+					.click();
+			}
 	}, 100);
 };
 
@@ -276,3 +280,22 @@ const observer = new MutationObserver(() => {
 const config = { subtree: true, childList: true };
 
 observer.observe(document, config);
+
+const checkForSSO = () => {
+	const pathArr = location.pathname.split("/");
+	const isSSO = pathArr[pathArr.length - 1] === "sso";
+	if (!isSSO) {
+		return;
+	}
+	const button = document.querySelector('button[type="submit"]');
+	if (button) {
+		button.click();
+	}
+	else {
+		setTimeout(() => {
+			checkForSSO();
+		}, 100);
+	}
+};
+
+checkForSSO();
